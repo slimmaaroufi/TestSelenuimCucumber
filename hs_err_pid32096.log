@@ -1,0 +1,196 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 100663296 bytes for Failed to commit area from 0x00000000a1000000 to 0x00000000a7000000 of length 100663296.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3287), pid=32096, tid=31640
+#
+# JRE version:  (11.0.15+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.15+8-LTS-149, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 cucumber.api.cli.Main C:/Users/maaro/eclipse-workspace/test/src/spec/features/features_files/Login.feature --glue classpath: --plugin pretty --monochrome
+
+Host: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  , 8 cores, 5G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+Time: Thu Dec  7 16:57:50 2023 Paris, Madrid elapsed time: 0.030126 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001d9728af000):  JavaThread "Unknown thread" [_thread_in_vm, id=31640, stack(0x0000006453d00000,0x0000006453e00000)]
+
+Stack: [0x0000006453d00000,0x0000006453e00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x629d8a]
+V  [jvm.dll+0x7638ff]
+V  [jvm.dll+0x764fa9]
+V  [jvm.dll+0x765633]
+V  [jvm.dll+0x23d9c8]
+V  [jvm.dll+0x6270aa]
+V  [jvm.dll+0x61be35]
+V  [jvm.dll+0x2f27dc]
+V  [jvm.dll+0x2f2662]
+V  [jvm.dll+0x2f7386]
+V  [jvm.dll+0x339d8f]
+V  [jvm.dll+0x3397c0]
+V  [jvm.dll+0x2cfdf8]
+V  [jvm.dll+0x2d0f66]
+V  [jvm.dll+0x73df07]
+V  [jvm.dll+0x73f79f]
+V  [jvm.dll+0x346ab9]
+V  [jvm.dll+0x723810]
+V  [jvm.dll+0x3b56cf]
+V  [jvm.dll+0x3b77e1]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa58]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001d9706d4dd0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001d9728c3000 GCTaskThread "GC Thread#0" [stack: 0x0000006453e00000,0x0000006453f00000] [id=32368]
+  0x000001d9728eb800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000006453f00000,0x0000006454000000] [id=33152]
+  0x000001d9728ed000 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000006454000000,0x0000006454100000] [id=3664]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffde90ef087]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001d9728ad320] Heap_lock - owner thread: 0x000001d9728af000
+
+Heap address: 0x00000000a1000000, size: 1520 MB, Compressed Oops mode: Non-zero based: 0x00000000a1000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff758690000 - 0x00007ff75869f000 	C:\Program Files\Java\jdk-11.0.15\bin\javaw.exe
+0x00007ffe0be70000 - 0x00007ffe0c087000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe09f40000 - 0x00007ffe0a004000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe09280000 - 0x00007ffe09625000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x000000005d110000 - 0x000000005d442000 	C:\Program Files\Norton Security\NortonData\22.23.3.8\Definitions\IPSDefs\20231206.064\IPSEng64.dll
+0x00007ffe0b1c0000 - 0x00007ffe0b271000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffe09c40000 - 0x00007ffe09ce7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe0a420000 - 0x00007ffe0a4c6000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffe0a010000 - 0x00007ffe0a127000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe09bc0000 - 0x00007ffe09bc8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffe09630000 - 0x00007ffe09741000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffdea0a0000 - 0x00007ffdea0b5000 	C:\Program Files\Java\jdk-11.0.15\bin\VCRUNTIME140.dll
+0x00007ffdea080000 - 0x00007ffdea098000 	C:\Program Files\Java\jdk-11.0.15\bin\jli.dll
+0x00007ffe0bc70000 - 0x00007ffe0be1e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe097d0000 - 0x00007ffe097f6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe0b280000 - 0x00007ffe0b2a9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffdf99e0000 - 0x00007ffdf9c73000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100\COMCTL32.dll
+0x00007ffe09970000 - 0x00007ffe09a89000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe091e0000 - 0x00007ffe0927a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe017e0000 - 0x00007ffe017ea000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe0a380000 - 0x00007ffe0a3b1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffde9b70000 - 0x00007ffde9c0b000 	C:\Program Files\Java\jdk-11.0.15\bin\msvcp140.dll
+0x00007ffde8e10000 - 0x00007ffde9926000 	C:\Program Files\Java\jdk-11.0.15\bin\server\jvm.dll
+0x00007ffde86a0000 - 0x00007ffde86a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe0b140000 - 0x00007ffe0b1b1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe01260000 - 0x00007ffe01294000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe08140000 - 0x00007ffe08158000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffde5af0000 - 0x00007ffde5b00000 	C:\Program Files\Java\jdk-11.0.15\bin\verify.dll
+0x00007ffe06d60000 - 0x00007ffe06f93000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffe0adb0000 - 0x00007ffe0b139000 	C:\WINDOWS\System32\combase.dll
+0x00007ffe09e40000 - 0x00007ffe09f17000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffdf8d40000 - 0x00007ffdf8d72000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffe09750000 - 0x00007ffe097ca000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffde5530000 - 0x00007ffde5558000 	C:\Program Files\Java\jdk-11.0.15\bin\java.dll
+0x00007ffde5120000 - 0x00007ffde512a000 	C:\Program Files\Java\jdk-11.0.15\bin\jimage.dll
+0x00007ffde3230000 - 0x00007ffde3246000 	C:\Program Files\Java\jdk-11.0.15\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11.0.15\bin;C:\WINDOWS\SYSTEM32;C:\Program Files\Norton Security\NortonData\22.23.3.8\Definitions\IPSDefs\20231206.064;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100;C:\Program Files\Java\jdk-11.0.15\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: cucumber.api.cli.Main C:/Users/maaro/eclipse-workspace/test/src/spec/features/features_files/Login.feature --glue classpath: --plugin pretty --monochrome
+java_class_path (initial): C:\Users\maaro\eclipse-workspace\test\target\classes;C:\Users\maaro\eclipse-workspace\test\target\test-classes;C:\Users\maaro\.m2\repository\org\apache\poi\poi-ooxml\3.13\poi-ooxml-3.13.jar;C:\Users\maaro\.m2\repository\org\apache\poi\poi\3.13\poi-3.13.jar;C:\Users\maaro\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;C:\Users\maaro\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.13\poi-ooxml-schemas-3.13.jar;C:\Users\maaro\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\maaro\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\maaro\.m2\repository\org\seleniumhq\selenium\selenium-http-jdk-client\4.13.0\selenium-http-jdk-client-4.13.0.jar;C:\Users\maaro\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\maaro\.m2\repository\org\seleniumhq\selenium\selenium-api\4.13.0\selenium-api-4.13.0.jar;C:\Users\maaro\.m2\repository\org\seleniumhq\selenium\selenium-http\4.13.0\selenium-http-4.13.0.jar;C:\Users\maaro\.m2\repository\com\google\guava\guava\32.1.2-jre\guava-32.1.2-jre.jar;C:\Users\maaro\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\maaro\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\maaro\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\maaro\.m2\repository\org\checkerframework\checker-qual\3.33.0\checker-qual-3.33.0.jar;C:\Users\maaro\.m2\repository\com\google\errorprone\error_prone_annotations\2.18.0\error_prone_annotations-2.18.0.jar;C:\Users\maaro\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar;C:\Users\maaro\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\maaro\.m2\repository\org\seleniumhq\selenium\selenium-json\4.13.0\selenium-json-4.13.0.jar;C:\Users\maaro\.m2\repos
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 100663296                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1593835520                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.15
+PATH=C:/Users/maaro/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_19.0.2.v20230129-1123/jre/bin/server;C:/Users/maaro/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_19.0.2.v20230129-1123/jre/bin;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.15\bin;C:\Program Files\apache-maven-3.8.8\bin\bin;C:\Program Files\apache-maven-3.8.8\bin;C:\Users\maaro\AppData\Local\Programs\Python\Python311\Scripts;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\maaro\AppData\Local\Programs\Python\Python311\Scripts;C:\Program Files\nodejs\;C:\Users\maaro\scoop\shims;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\maaro\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\maaro\AppData\Local\GitHubDesktop\bin;C:\Users\maaro\AppData\Roaming\npm;C:\Users\maaro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\maaro\OneDrive\Bureau;
+USERNAME=maaro
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+
+CPU:total 8 (initial active 8) (8 cores per cpu, 2 threads per core) family 23 model 24 stepping 1 microcode 0x0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, ht, tsc, tscinvbit, tscinv, bmi1, bmi2, adx, s
+
+Memory: 4k page, system-wide physical 6078M (347M free)
+TotalPageFile size 24510M (AvailPageFile size 27M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 60M, peak: 156M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.15+8-LTS-149) for windows-amd64 JRE (11.0.15+8-LTS-149), built on Mar  9 2022 22:42:32 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.
