@@ -36,7 +36,7 @@ public class LoginPage extends BasePage {
 	@FindBy(how=How.XPATH,using="//p[@id='email-helper-text']")
 	public static WebElement msgError;
 	
-	//message erreur password
+	//message erreur password test
 	@FindBy(xpath="//div[@class='MuiAlert-message']")
 	public static WebElement  msgErrorPassword;
 	
