@@ -6,6 +6,7 @@ import com.e2etest.automation.page_Objects.LoginPage;
 import com.e2etest.automation.utils.ConfigFileReader;
 import com.e2etest.automation.utils.SeleniumUtils;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,6 +19,8 @@ public class LoginStepDfinition {
 	private SeleniumUtils seleniumUtils;
 	public LoginPage loginPage;
 	
+	
+	//constructor
 	public LoginStepDfinition () {
 	loginPage= new LoginPage();
 	configFileReader=new ConfigFileReader();
@@ -55,6 +58,14 @@ public class LoginStepDfinition {
 		   loginPage.validTitre();
 	}
 	
+	@And ("bouton déconnexion s affiche")
+		public void boutondéconnexionsaffiche()
+	{
+		loginPage.BtnLogoutIsDisplayed();
+	}
+	
+
+	
 	@Then ("Le message d erreur s affiche {string}")
 	public void Lemessagederreursaffiche (String msgEror) {
 	String msg=LoginPage.msgError.getText();
@@ -66,7 +77,14 @@ public class LoginStepDfinition {
 		loginPage.loginNP();
 	}
 
-	
-		
+	@And ("Je saisi le password invalide")
+	public void Jesaisilepasswordinvalide () {
+		loginPage.passwordNP();
+	}
+	@Then ("message erreur s affiche {string}")
+	public void messageerreursaffiche (String msgErrorPassword) {
+	String msg=LoginPage.msgErrorPassword.getText();
+	Assert.assertEquals(msg, msgErrorPassword);
+	}	
 	
 }

@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
-
+	//visibilite	type		variable
 	private static XSSFSheet ExcelWSheet;
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFCell Cell;
@@ -24,6 +24,7 @@ public class ExcelUtils {
 	 * Path and Sheetname as Arguments to this method
 	 */
 
+		//des fonctionns nécessite pas des initalisation
 	public static void setExcelFile(String Path, String SheetName) throws Exception {
 
 		try {
