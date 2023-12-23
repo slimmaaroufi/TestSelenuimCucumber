@@ -2,6 +2,7 @@ package com.e2etest.automation.step_Definitions;
 
 import org.junit.Assert;
 
+
 import com.e2etest.automation.page_Objects.LoginPage;
 import com.e2etest.automation.utils.ConfigFileReader;
 import com.e2etest.automation.utils.SeleniumUtils;
@@ -35,36 +36,35 @@ public class LoginStepDfinition {
 	}
 	
 
-	@When ("Je saisi le username")
-	public void Jesaisileusername() {
-		loginPage.fillUsername();
+	@When ("I enter the email and password")
+	public void Ientertheemailandpassword(String email, String password) {
+		
 	}
 
 	
-	@When ("Je saisi le password")
-	public void Jesaisilepassword() {
-	loginPage.fillPassword();
+	@When ("I click the login button")
+	public void Iclicktheloginbutton() {
+	
 	}
 	
 	
-	@When ("Je clique sur le bouton login")
-		public void Jecliquesurleboutonlogin()
+	@When ("Page Title should be {string}")
+		public void PageTitleshouldbe(String title )
 		{
-			loginPage.clickBtnLogin();
+			
 		}
 	
-	@Then ("Je me redirige vers la page Home {string}")
-		public void JemeredirigeverslapageHome (String titlePageAcceuil) {
-		   loginPage.validTitre();
+	@Then ("User click on Logout link")
+		public void UserclickonLogoutlink () {
+		   
 	}
 	
-	@And ("bouton déconnexion s affiche")
-		public void boutondéconnexionsaffiche()
-	{
-		loginPage.BtnLogoutIsDisplayed();
-	}
-	
+	@Then ("UTitle of the page should be {string}")
+	public void UTitleofthepageshouldbe (String  ) {
+	   
+}
 
+/*
 	
 	@Then ("Le message d erreur s affiche {string}")
 	public void Lemessagederreursaffiche (String msgEror) {
@@ -81,10 +81,11 @@ public class LoginStepDfinition {
 	public void Jesaisilepasswordinvalide () {
 		loginPage.passwordNP();
 	}
+	
 	@Then ("message erreur s affiche {string}")
 	public void messageerreursaffiche (String msgErrorPassword) {
 	String msg=LoginPage.msgErrorPassword.getText();
 	Assert.assertEquals(msg, msgErrorPassword);
-	}	
-	
-}
+	}
+*/	
+

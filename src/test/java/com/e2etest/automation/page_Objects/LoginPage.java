@@ -1,5 +1,6 @@
 package com.e2etest.automation.page_Objects;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -17,18 +18,22 @@ public class LoginPage extends BasePage {
 	public ConfigFileReader configFileReader;
 	
 	//locater email
-	@FindBy(how=How.ID,using="email")
+	@FindBy(how=How.ID,using="Email")
 	public static WebElement username;
 	
 	//locater password
-	@FindBy(how=How.ID,using="password")
+	@FindBy(how=How.ID,using="Password")
 	public static WebElement password;
 	
 	// locater button submit connexion
-	@FindBy(how=How.ID,using="submit")
+	@FindBy(how=How.XPATH,using="//button[type='submit']")
 	public static WebElement btnLogin;
 	
-	//assert title home page
+	// déconnexion
+	@FindBy(xpath="//*[contains(text(),'Logout')]")
+	public static WebElement  btnLogout;
+	
+/*	//assert title home page
 	@FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div/h2")
 	private static WebElement titlePage;
 	
@@ -36,13 +41,11 @@ public class LoginPage extends BasePage {
 	@FindBy(how=How.XPATH,using="//p[@id='email-helper-text']")
 	public static WebElement msgError;
 	
-	//message erreur password test
+	//message erreur password
 	@FindBy(xpath="//div[@class='MuiAlert-message']")
 	public static WebElement  msgErrorPassword;
-	
-	// déconnexion
-	@FindBy(xpath="//*[contains(text(),'Logout')]")
-	public static WebElement  btnLogout;
+*/	
+
 
 	
 	/* initialisation des elements*/
@@ -65,59 +68,26 @@ public class LoginPage extends BasePage {
 	
 	public void fillUsername() 
 	{
+		username.clear();
 		username.sendKeys(configFileReader.getProperties("home.login"));
 	}
 	
 	public void fillPassword() 
-	{
+	{password.clear();
 		password.sendKeys(configFileReader.getProperties("home.password"));
 	}
 	
 	public void clickBtnLogin() 
 	{
 		btnLogin.click();
-	}
-		
-	public void validTitre() {
-		  	     
-		// Vérifier le contenu des éléments dans la sidebar
-		if (titlePage.getText().equals("Good afternoon slim2025")) {
-		            System.out.println("Test ok : the title is correct :"+titlePage.getText());
-		 } else 
-		 	   {
-		           System.out.println("Test failed : the title should be :Good afternoon slim2025");
-		       }
-	    }
-	
-	
-	public void BtnLogoutIsDisplayed() {
-		btnLogout.isDisplayed();
-	}
-	
-	
 		
 	
-   	
-	public void loginNP() 
-	{
-			username.clear();
-			username.sendKeys("slim122com");
-			password.sendKeys(configFileReader.getProperties("home.password"));
-			btnLogin.click();
-			
 	}
-	
-	
+		
 
 	
-	public void passwordNP() {
 		
-		
-		password.clear();
-		password.sendKeys("testllfdf789521");
-		btnLogin.click();
-		
-	}
+	
 
 	
 	
